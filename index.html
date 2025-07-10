@@ -1,0 +1,572 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Todo lo que buscas esta acá</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="icon" type="imagenes/logo.jpeg" href="imagenes/logo.jpeg">
+
+</head>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let cartCount = 0;
+    const cartCounter = document.getElementById("cart-count");
+    const addToCartButtons = document.querySelectorAll(".add-to-cart");
+
+    addToCartButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        cartCount++;
+        cartCounter.textContent = cartCount;
+      });
+    });
+  });
+</script>
+<body style="padding-top: 70px;">
+
+  <!-- Navbar estilo Crunchyroll -->
+  <nav class="navbar navbar-expand-lg fixed-top crunchy-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white fw-bold d-flex align-items-center" href="#">
+  <img src="imagenes/logo.jpeg" alt="Logo" width="40" height="40" class="me-2 rounded-circle" />
+  Todo lo que buscas está acá
+</a>
+
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido" aria-controls="navbarContenido" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContenido">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="#">Inicio</a>
+          </li>
+  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count">
+    0
+  </span>
+</a>
+
+            </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar productos..." aria-label="Buscar">
+          <button class="btn btn-outline-light" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+   <!-- ✅ CONTENEDOR FLEX PRINCIPAL -->
+  <div class="d-flex flex-grow-1">
+    
+    <!-- SIDEBAR LATERAL -->
+    <aside class="sidebar bg-dark text-white p-3">
+      <h5><i class="bi bi-list"></i> Navegación</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2">
+          <a class="nav-link text-white" href="index.html">
+            <i class="bi bi-house-door-fill"></i> Inicio
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link text-white" href="contactos.html">
+            <i class="bi bi-envelope-fill"></i> Contacto
+          </a>
+        </li>
+        <a class="nav-link text-white position-relative ms-3" href="carrito.html">
+        <i class="bi bi-cart-fill"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count">0</span>
+      </a>
+      </ul>
+    </aside>
+
+
+  <!-- Contenido principal -->
+  <div class="main-layout">
+      <main class="main-content">
+      <!-- Banner -->
+    <div class="banner d-flex flex-column justify-content-center align-items-start p-5 rounded" 
+         style="background: url('imagenes/proximos.jpg') center/cover no-repeat; height: 300px;">
+      <h1 style="color: #000000;">Productos Proximos</h1>
+      <h5 style="color: #000000;">descubrí las mejores productos para vos.</h5>
+
+      <!-- Botón convertido en enlace -->
+      <a href="proximos.html" class="btn btn-orange btn-lg mt-3">Explorar ahora</a>
+    </div>
+
+<div class="container py-5">
+  <h2 class="mb-4 text-orange fw-bold">Nuestros productos</h2>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+
+  <!-- Producto 1 -->
+  <div class="col">
+    <div class="card h-100">
+      <img src="imagenes/producto1.jpeg" class="card-img-top img-fluid" alt="Producto 1">
+      <div class="card-body">
+        <h5 class="card-title">Termo</h5>
+        <p class="card-text">Termo + bombilla.</p>
+        <p class="text-orange fw-semibold mb-2">$50000</p>
+        <button 
+        class="btn btn-orange w-100 add-to-cart"
+        data-id="1"
+        data-nombre="termo"
+        data-precio="50000"
+        data-imagen="imagenes/producto1.jpeg"
+        data-descripcion="Termo + bombilla.">
+        Agregar al carrito
+      </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 2 -->
+  <div class="col">
+    <div class="card h-100">
+      <img src="imagenes/producto2.jpeg" class="card-img-top img-fluid" alt="Producto 2">
+      <div class="card-body">
+        <h5 class="card-title">Toallon</h5>
+        <p class="card-text">Toallon de baño color blanco.</p>
+        <p class="text-orange fw-semibold mb-2">$2000</p>
+        <button 
+        class="btn btn-orange w-100 add-to-cart"
+        data-id="2"
+        data-nombre="Toallón"
+        data-precio="20000"
+        data-imagen="imagenes/producto2.jpeg"
+        data-descripcion="Toallón de baño de algodón blanco.">
+        Agregar al carrito
+      </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 3 -->
+  <div class="col">
+    <div class="card h-100">
+      <img src="imagenes/producto3.jpeg" class="card-img-top img-fluid" alt="Producto 3">
+      <div class="card-body">
+        <h5 class="card-title">atornillador</h5>
+        <p class="card-text">Set Atornillador con piezas.</p>
+        <p class="text-orange fw-semibold mb-2">$20000</p>
+        <button 
+        class="btn btn-orange w-100 add-to-cart"
+        data-id="3"
+        data-nombre="Set de atornillador"
+        data-precio="20000"
+        data-imagen="imagenes/producto3.jpeg"
+        data-descripcion="atornillador con piezas.">
+        Agregar al carrito
+      </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 4 -->
+  <div class="col">
+    <div class="card h-100">
+      <img src="imagenes/producto4.jpeg" class="card-img-top img-fluid" alt="Producto 4">
+      <div class="card-body">
+        <h5 class="card-title">Mini Asiradora</h5>
+        <p class="card-text">Mini aspiradora con accesorios.</p>
+        <p class="text-orange fw-semibold mb-2">$20000</p>
+        <button 
+        class="btn btn-orange w-100 add-to-cart"
+        data-id="4"
+        data-nombre="Mini Aspiradora"
+        data-precio="20000"
+        data-imagen="imagenes/producto4.jpeg"
+        data-descripcion="Mini aspiradora incluye accesorios.">
+        Agregar al carrito
+      </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 5 -->
+  <div class="col">
+    <div class="card h-100">
+      <img src="imagenes/producto5.jpeg" class="card-img-top img-fluid" alt="Producto 5">
+      <div class="card-body">
+        <h5 class="card-title">termo</h5>
+        <p class="card-text">termo 1 litro+funda.</p>
+        <p class="text-orange fw-semibold mb-2">$25000</p>
+        <button 
+        class="btn btn-orange w-100 add-to-cart"
+        data-id="5"
+        data-nombre="Termo"
+        data-precio="25000"
+        data-imagen="imagenes/producto5.jpeg"
+        data-descripcion="Termo 1lt + funda.">
+        Agregar al carrito
+      </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 6 -->
+  <div class="col">
+    <div class="card h-100">
+      <img src="imagenes/producto6.jpeg" class="card-img-top img-fluid" alt="Producto 6">
+      <div class="card-body">
+        <h5 class="card-title">Bandolera</h5>
+        <p class="card-text">Bandolera color marrón.</p>
+        <p class="text-orange fw-semibold mb-2">$20000</p>
+        <button 
+        class="btn btn-orange w-100 add-to-cart"
+        data-id="6"
+        data-nombre="Bandolera"
+        data-precio="20000"
+        data-imagen="imagenes/producto6.jpeg"
+        data-descripcion="Bandolera de cuero marrón.">
+        Agregar al carrito
+      </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 7 -->
+  <div class="col">
+    <div class="card h-100">
+      <img src="imagenes/producto7.jpeg" class="card-img-top img-fluid" alt="Producto 7">
+      <div class="card-body">
+        <h5 class="card-title">Humidificador</h5>
+        <p class="card-text">Humidificador con piedras.</p>
+        <p class="text-orange fw-semibold mb-2">$30000</p>
+        <button 
+        class="btn btn-orange w-100 add-to-cart"
+        data-id="7"
+        data-nombre="humidificador"
+        data-precio="30000"
+        data-imagen="imagenes/producto7.jpeg"
+        data-descripcion="Humidificador con piedras.">
+        Agregar al carrito
+      </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 8 -->
+  <div class="col">
+    <div class="card h-100">
+      <img src="imagenes/producto8.jpeg" class="card-img-top img-fluid" alt="Producto 8">
+      <div class="card-body">
+        <h5 class="card-title">Vincha luminica</h5>
+        <p class="card-text">Vincha elastica color negra luminica.</p>
+        <p class="text-orange fw-semibold mb-2">$11000</p>
+        <button 
+        class="btn btn-orange w-100 add-to-cart"
+        data-id="8"
+        data-nombre="Vincha Luminica"
+        data-precio="11000"
+        data-imagen="imagenes/producto8.jpeg"
+        data-descripcion="Vincha con portador de led luminoso.">
+        Agregar al carrito
+      </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 9 -->
+  <div class="col">
+    <div class="card h-100">
+      <img src="imagenes/producto9.jpeg" class="card-img-top img-fluid" alt="Producto 9">
+      <div class="card-body">
+        <h5 class="card-title">Inflador</h5>
+        <p class="card-text">Inflador de bicicleta a mano.</p>
+        <p class="text-orange fw-semibold mb-2">$8000</p>
+        <button 
+        class="btn btn-orange w-100 add-to-cart"
+        data-id="9"
+        data-nombre="Inflador de bicicleta"
+        data-precio="8000"
+        data-imagen="imagenes/producto9.jpeg"
+        data-descripcion="inflador de Bicicleta a mano.">
+        Agregar al carrito
+      </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 10 -->
+  <div class="col">
+    <div class="card h-100">
+      <img src="imagenes/producto10.jpeg" class="card-img-top img-fluid" alt="Producto 10">
+      <div class="card-body">
+        <h5 class="card-title">Auriculares</h5>
+        <p class="card-text">Auriculares de vincha Bluetooth.</p>
+        <p class="text-orange fw-semibold mb-2">$12000</p>
+        <button 
+        class="btn btn-orange w-100 add-to-cart"
+        data-id="10"
+        data-nombre="Auriculares"
+        data-precio="12000"
+        data-imagen="imagenes/producto10.jpeg"
+        data-descripcion="Auriculares vincha bluetooh.">
+        Agregar al carrito
+      </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 11 -->
+  <div class="col">
+    <div class="card h-100">
+      <img src="imagenes/producto11.jpeg" class="card-img-top img-fluid" alt="Producto 11">
+      <div class="card-body">
+        <h5 class="card-title">Perfume</h5>
+        <p class="card-text">Perfume de hombre.</p>
+        <p class="text-orange fw-semibold mb-2">$42000</p>
+        <button 
+        class="btn btn-orange w-100 add-to-cart"
+        data-id="11"
+        data-nombre="Perfume"
+        data-precio="42000"
+        data-imagen="imagenes/producto11.jpeg"
+        data-descripcion="Perfume de hombre.">
+        Agregar al carrito
+      </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 12 -->
+  <div class="col">
+    <div class="card h-100">
+      <img src="imagenes/producto12.jpeg" class="card-img-top img-fluid" alt="Producto 12">
+      <div class="card-body">
+        <h5 class="card-title">gorro</h5>
+        <p class="card-text">Gorro de Lana.</p>
+        <p class="text-orange fw-semibold mb-2">$13000</p>
+        <button 
+        class="btn btn-orange w-100 add-to-cart"
+        data-id="12"
+        data-nombre="Gorro"
+        data-precio="13000"
+        data-imagen="imagenes/producto12.jpeg"
+        data-descripcion="Gorro de Lana.">
+        Agregar al carrito
+      </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 13 -->
+  <div class="col">
+    <div class="card h-100">
+      <img src="imagenes/producto13.jpeg" class="card-img-top img-fluid" alt="Producto 13">
+      <div class="card-body">
+        <h5 class="card-title">Calza Termica</h5>
+        <p class="card-text">Calza Termica de Mujer color Negro.</p>
+        <p class="text-orange fw-semibold mb-2">$14000</p>
+        <button 
+        class="btn btn-orange w-100 add-to-cart"
+        data-id="13"
+        data-nombre="Calza"
+        data-precio="14000"
+        data-imagen="imagenes/producto13.jpeg"
+        data-descripcion="Calza Termica de mujer color negro.">
+        Agregar al carrito
+      </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 14 -->
+  <div class="col">
+    <div class="card h-100">
+      <img src="imagenes/producto14.jpeg" class="card-img-top img-fluid" alt="Producto 14">
+      <div class="card-body">
+        <h5 class="card-title">Calza Termica</h5>
+        <p class="card-text">Calza Termica de Mujer color piel.</p>
+        <p class="text-orange fw-semibold mb-2">$14000</p>
+        <button 
+        class="btn btn-orange w-100 add-to-cart"
+        data-id="14"
+        data-nombre="Calza"
+        data-precio="14000"
+        data-imagen="imagenes/producto14.jpeg"
+        data-descripcion="Calza termica de mujer color piel.">
+        Agregar al carrito
+      </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 15 -->
+  <div class="col">
+    <div class="card h-100">
+      <img src="imagenes/producto15.jpeg" class="card-img-top img-fluid" alt="Producto 15">
+      <div class="card-body">
+        <h5 class="card-title">Organizador</h5>
+        <p class="card-text">Organizador de Maquillaje.</p>
+        <p class="text-orange fw-semibold mb-2">$30000</p>
+        <button 
+        class="btn btn-orange w-100 add-to-cart"
+        data-id="15"
+        data-nombre="Organizador de Maquillaje"
+        data-precio="30000"
+        data-imagen="imagenes/producto15.jpeg"
+        data-descripcion="Organizador de Maquillaje.">
+        Agregar al carrito
+      </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 16 -->
+  <div class="col">
+    <div class="card h-100">
+      <img src="imagenes/producto16.jpeg" class="card-img-top img-fluid" alt="Producto 16">
+      <div class="card-body">
+        <h5 class="card-title">Organizador de Maquillaje</h5>
+        <p class="card-text">Estante para maquillaje.</p>
+        <p class="text-orange fw-semibold mb-2">$30000</p>
+        <button 
+        class="btn btn-orange w-100 add-to-cart"
+        data-id="16"
+        data-nombre="Organizador de Maquillaje"
+        data-precio="29999"
+        data-imagen="imagenes/producto16.jpeg"
+        data-descripcion="Estante para maquillaje.">
+        Agregar al carrito
+      </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 17 -->
+  <div class="col">
+    <div class="card h-100">
+      <img src="imagenes/producto17.jpeg" class="card-img-top img-fluid" alt="Producto 17">
+      <div class="card-body">
+        <h5 class="card-title">Marcadores</h5>
+        <p class="card-text">Marcadores de colores x36.</p>
+        <p class="text-orange fw-semibold mb-2">$35000</p>
+        <button 
+        class="btn btn-orange w-100 add-to-cart"
+        data-id="17"
+        data-nombre="Marcadores x36"
+        data-precio="35000"
+        data-imagen="imagenes/producto17.jpeg"
+        data-descripcion="Marcadores de colores x36 unidades.">
+        Agregar al carrito
+      </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 18 -->
+  <div class="col">
+    <div class="card h-100">
+      <img src="imagenes/producto18.jpeg" class="card-img-top img-fluid" alt="Producto 18">
+      <div class="card-body">
+        <h5 class="card-title">Marcadores</h5>
+        <p class="card-text">Marcadores de color x24.</p>
+        <p class="text-orange fw-semibold mb-2">$15000</p>
+       <button 
+        class="btn btn-orange w-100 add-to-cart"
+        data-id="18"
+        data-nombre="Marcadores x24"
+        data-precio="15000"
+        data-imagen="imagenes/producto18.jpeg"
+        data-descripcion="Marcadores de colores x24 unidades.">
+        Agregar al carrito
+      </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Modal para imagen ampliada -->
+<div class="modal fade" id="imagenModal" tabindex="-1" aria-labelledby="imagenModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-dark">
+      <div class="modal-header border-0">
+        <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="" id="imagenModalSrc" class="img-fluid rounded" alt="Imagen ampliada">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+      <!-- Footer -->
+      <footer class="text-center py-4 mt-5">
+  <img src="imagenes/logo-clemente.png" alt="Logo Clemente" width="40" height="40" class="mb-2 rounded-circle" />
+  <p class="mb-0">© 2025 Todo lo que buscas está acá - Todos los derechos reservados</p>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let cartCount = 0;
+    const cartCounter = document.getElementById("cart-count");
+    const addToCartButtons = document.querySelectorAll(".add-to-cart");
+
+    // Cargar cantidad actual desde localStorage
+    const carritoGuardado = JSON.parse(localStorage.getItem("carrito")) || [];
+    cartCounter.textContent = carritoGuardado.reduce((acc, p) => acc + p.cantidad, 0);
+
+    addToCartButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const id = button.getAttribute("data-id");
+        const nombre = button.getAttribute("data-nombre");
+        const precio = parseInt(button.getAttribute("data-precio"));
+        const imagen = button.getAttribute("data-imagen");
+        const descripcion = button.getAttribute("data-descripcion");
+
+        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+        const index = carrito.findIndex(p => p.id === id);
+        if (index >= 0) {
+          carrito[index].cantidad += 1;
+        } else {
+          carrito.push({ id, nombre, precio, imagen, descripcion, cantidad: 1 });
+        }
+
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+
+        // Actualizar contador
+        const totalItems = carrito.reduce((acc, p) => acc + p.cantidad, 0);
+        cartCounter.textContent = totalItems;
+      });
+    });
+  });
+  document.addEventListener("DOMContentLoaded", function () {
+    // Funcionalidad del carrito (ya la tenías)
+    let cartCount = 0;
+    const cartCounter = document.getElementById("cart-count");
+    const addToCartButtons = document.querySelectorAll(".add-to-cart");
+
+    addToCartButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        cartCount++;
+        cartCounter.textContent = cartCount;
+      });
+    });
+
+    // Funcionalidad para agrandar imagen
+    const imagenes = document.querySelectorAll(".card-img-top");
+    const imagenModal = document.getElementById("imagenModalSrc");
+    const modal = new bootstrap.Modal(document.getElementById("imagenModal"));
+
+    imagenes.forEach(img => {
+      img.style.cursor = "zoom-in";
+      img.addEventListener("click", () => {
+        imagenModal.src = img.src;
+        modal.show();
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
