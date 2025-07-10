@@ -1,0 +1,260 @@
+/* ===================== BASE ===================== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  background-color: #f2f2f2;
+  color: #2c2c2c;
+}
+
+a:focus, button:focus, input:focus {
+  outline: 2px dashed #f47521;
+  outline-offset: 3px;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.d-flex {
+  margin: 0 !important;
+}
+
+.sidebar {
+  width: 240px;
+  min-height: 100vh;
+  background-color: #212529;
+  padding: 1rem;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 2rem;
+  margin: 0 !important;
+  background-color: #f2f2f2;
+}
+
+main img,
+main .banner {
+  max-width: 100%;
+}
+
+.container,
+.container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin: 0 !important;
+}
+
+.text-orange {
+  color: #f47521 !important;
+}
+
+/* ===================== NAVBAR ===================== */
+.crunchy-navbar {
+  background-color: #f47521;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.crunchy-navbar .nav-link:hover,
+.crunchy-navbar .nav-link:focus {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+.navbar-brand img {
+  object-fit: cover;
+  border-radius: 50%;
+}
+/* ===================== SIDEBAR ===================== */
+    overflow-x: hidden;
+    }
+    .sidebar {
+      min-height: 100vh;
+    }
+
+
+/* ===================== MAIN LAYOUT ===================== */
+.main-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 2rem;
+}
+
+/* ===================== BANNER ===================== */
+.banner {
+  background: linear-gradient(90deg, #f47521, #ffa142);
+  color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* ===================== BUTTONS ===================== */
+.btn-orange {
+  background-color: #f47521;
+  border: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.btn-orange:hover {
+  background-color: #e46317;
+}
+
+/* ===================== CAROUSEL ===================== */
+.carousel-inner img {
+  height: 400px;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* ===================== CARDS ===================== */
+.card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.card-body {
+  background-color: white;
+}
+.card, .card img {
+  width: 100%;
+}
+
+.card-img-top {
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* ===================== CART TABLE ===================== */
+.price, .subtotal {
+  font-weight: bold;
+  color: #2c2c2c;
+}
+/* ===================== CARUSEL ===================== */
+.carousel-inner img {
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.carousel-caption {
+  background-color: rgba(0,0,0,0.6);
+  padding: 1rem;
+  border-radius: 10px;
+}
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background-color: #212529;
+}
+
+.main-content {
+  flex-grow: 1;
+  background-color: #f2f2f2;
+}
+
+.banner {
+  background: linear-gradient(90deg, #f47521, #ffa142);
+  color: white;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.navbar .nav-link {
+  color: white !important;
+}
+
+
+/* ===================== FOOTER ===================== */
+footer {
+  color: #777;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 1rem;
+  background-color: #fff;
+  margin-top: 2rem;
+  border-top: 1px solid #ddd;
+}
+
+/* ===================== MEDIA QUERIES ===================== */
+@media (max-width: 576px) {
+  .card-img-top {
+    height: 150px;
+  }
+
+  .carousel-inner img {
+    height: 250px;
+  }
+
+  .sidebar {
+    flex-wrap: wrap;
+  }
+
+  .twitch-sidebar {
+    display: none;
+  }
+}
